@@ -1,0 +1,32 @@
+{
+  "name": "freecodecampapichallenges",
+  "version": "0.0.1",
+  "description": "freecodecamp api challenges app",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonniebigodes/freecodecampApiChallenges.git"
+  },
+  "keywords": [
+    "heroku",
+    "api",
+    "freecodecamp",
+    "challenges"
+  ],
+  "author": "jonniebigodes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonniebigodes/freecodecampApiChallenges/issues"
+  },
+  "homepage": "https://github.com/jonniebigodes/freecodecampApiChallenges#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
