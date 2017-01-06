@@ -1,2 +1,7 @@
-var headerChallenge= require('./headerChallenge/hChallenge.js');
+var headerChallenge= require('./headerChallenge/headerParseModule.js');
 
+module.exports={
+    getClientInfo:function(request){
+        return headerChallenge.parseMetadataHeader(request);
+    }
+};

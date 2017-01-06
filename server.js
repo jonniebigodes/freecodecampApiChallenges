@@ -1,6 +1,6 @@
 var express= require('express');
 var path= require('path');
-
+var Utilities= require('./Challenges/Utils.js')
 var app=express();
 
 
@@ -37,7 +37,12 @@ app.get('/time',function(request,response){
  * endpoint for the request header parser challenge
  */
 app.get('/whoami',function(request,response){
-    response.end('soon you will know who you are');
+    /*
+    response.end('soon you will know');
+    */
+    response.writeHead(200, { 'Content-Type': 'application/json' });
+    response.end(JSON.stringify(Utilities.getClientInfo(request)));
+    
 });
 
 /**
