@@ -1,4 +1,4 @@
-import './Assets/styleSheets/base.scss';
+import '../Assets/styleSheets/base.scss';
 import React,{Component} from 'react';
 
 class App extends Component {
@@ -6,7 +6,7 @@ class App extends Component {
     return(
       <h1>FreecodeCamp Api Challenges</h1>
       
-    );
+    )
   }
-}
+};
 export default App;

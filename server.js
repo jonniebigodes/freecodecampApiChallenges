@@ -9,22 +9,24 @@ app.set('port',(process.env.PORT||5000));
 
 
 
-if (process.env.NODE_ENV!=='production'){
-    var webpackDevMiddleware= require('webpack-dev-middleware');
-    var webpackHotMiddleware= require('webpack-hot-middleware');
-    var webpack= require('webpack');
-    var config= require('./webpack.config');
-    var compiler= webpack(config);
-
-    app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
-    
+if(process.env.NODE_ENV !== 'production') {
+  var webpackDevMiddleware = require('webpack-dev-middleware');
+  var webpackHotMiddleware = require('webpack-hot-middleware');
+  var webpack = require('webpack');
+  var config = require('./webpack.config');
+  var compiler = webpack(config);
+  
+  app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
+  app.use(webpackHotMiddleware(compiler));
 }
+
+app.use(express.static(path.join(__dirname, 'dist')));
 
 /**
  * endpoint general for handling and rendering the page with all the challenges(api)
  */
 app.get('/',function(request,response){
-    response.sendFile('views/index.html');
+    response.sendFile(__dirname + '/dist/index.html');
 });
 
 
@@ -70,7 +72,7 @@ app.listen(app.get('port'),function(error){
         console.log("error freecodecampApi: "+ error)
     }
     else{
-        console.log("freecodecamp app is running on port",app.get('port'));
+        console.info("freecodecamp app is running on port",app.get('port'));
     }
     
 });
