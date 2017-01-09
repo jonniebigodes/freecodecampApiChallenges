@@ -14,20 +14,20 @@ The challenges are the following
 
 
 
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
+
 ### Tech
 
-Dillinger uses a number of open source projects to work properly:
+this set of challenges uses a number of open source projects to work properly:
 * [React] - Great Javascript library for Building user interfaces
 * [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-
+* [Express] - fast node.js network app framework 
+* [Webpack] - fast packaging framework for deployment
 
 
 And of course the implementation of the challenges themselves are open source with a [public repository][dill]
  on GitHub.
 
-### Installation
+### Installation from source
 
 freecodecamp api  requires [Node.js](https://nodejs.org/) v4+ to run.
 
@@ -36,14 +36,12 @@ Download and extract the [latest pre-built release](https://github.com/jonniebig
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ cd dillinger
+$ cd folder to contain the app
 $ npm install 
 $ npm start
+
+Open url http://localhost:5000
 ```
-
-
-
-
 
 
 License
@@ -64,7 +62,7 @@ MIT
    [node.js]: <http://nodejs.org>
    [express]: <http://expressjs.com>
    [React]: <https://facebook.github.io/react/>
-
+   [Webpack]: <https://webpack.github.io/>
    
    [PlGh]:  <https://github.com/jonniebigodes/freecodecampApiChallenges/tree/master/plugins/github/readme.md>
    
