@@ -24,7 +24,7 @@ this set of challenges uses a number of open source projects to work properly:
 * [Webpack] - fast packaging framework for deployment
 
 
-And of course the implementation of the challenges themselves are open source with a [public repository][dill]
+And of course the implementation of the challenges themselves are open source with a [public repository]
  on GitHub.
 
 ### Installation from source
