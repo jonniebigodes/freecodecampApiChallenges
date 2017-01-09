@@ -24,7 +24,7 @@ this set of challenges uses a number of open source projects to work properly:
 * [Webpack] - fast packaging framework for deployment
 
 
-And of course the implementation of the challenges themselves are open source with a [public repository]
+And of course the implementation of the challenges themselves are open source with a [git-repo-url]
  on GitHub.
 
 ### Installation from source
@@ -57,8 +57,6 @@ MIT
 
    
    [git-repo-url]: <https://github.com/jonniebigodes/https://github.com/jonniebigodes/freecodecampApiChallenges/freecodecampApiChallenges.git>
-   
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
    [node.js]: <http://nodejs.org>
    [express]: <http://expressjs.com>
    [React]: <https://facebook.github.io/react/>
