@@ -56,7 +56,7 @@ MIT
 
 
    
-   [git-repo-url]: <https://github.com/jonniebigodes/https://github.com/jonniebigodes/freecodecampApiChallenges/freecodecampApiChallenges.git>
+   [git-repo-url]: <https://github.com/jonniebigodes/freecodecampApiChallenges/freecodecampApiChallenges.git>
    [node.js]: <http://nodejs.org>
    [express]: <http://expressjs.com>
    [React]: <https://facebook.github.io/react/>
