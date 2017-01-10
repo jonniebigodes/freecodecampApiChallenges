@@ -12,13 +12,25 @@ module.exports={
        return formated;
     },
     convertNaturalTimeStamp:function(value){
-        var result= parseInt((new Date(value).getTime()/1000).toFixed(0));
+        let result= parseInt((new Date(value).getTime()/1000).toFixed(0));
         return result;
     },
     isValidDate:function(value){
-        let Months=['','','','','','','','','','','',''];
-        return false;
         
+        let tmpData= new Date(value);
+        
+        //console.log(tmpData.getMonth());
+        if (isNaN(tmpData)){
+            return false;
+        }
+        return true;
+        
+    },
+    getNaturalDateFormated:function(value){
+        
+        
+        let tmpItem= value.split(' ').join("-");
+        return tmpItem;
     },
     getDateInfo:function(dateValue){
         var result={};
@@ -28,12 +40,14 @@ module.exports={
             
         }
         else if (module.exports.isValidDate(dateValue)){
-            result.NaturalDate= dateValue;
-            result.unixTimeStamp=11111111;
+            
+            result.NaturalDate= module.exports.getNaturalDateFormated(dateValue);
+            result.unixTimeStamp=module.exports.convertNaturalTimeStamp(dateValue);
+            
         }
         else{
-            result.NaturalDate=null;
-            result.unixTimeStamp= null;
+            result.NaturalDate="null";
+            result.unixTimeStamp= "null";
         }
         /*
         if (valueNatural){
@@ -47,6 +61,7 @@ module.exports={
             return result;
         }
         */
+        //console.log("natural date:\n"+ result.NaturalDate+" unixTimeStamp:\n"+ result.unixTimeStamp);
         return result;
     }
 

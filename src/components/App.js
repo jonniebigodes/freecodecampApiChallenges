@@ -22,7 +22,7 @@ class App extends Component {
               </div>
             </div>
             <div className="divTableRow">
-              <div className="divTableCell"><a href="https://freecodecampapichallenges.herokuapp.com/time" target="_blank">/time</a></div>
+              <div className="divTableCell"><a href="https://freecodecampapichallenges.herokuapp.com/time/" target="_blank">/time</a></div>
               <div className="divTableCell">
                 Endpoint that implements the challenge Timestamp Microservice located at <a href="https://www.freecodecamp.com/challenges/timestamp-microservice" target="_blank">here</a>.<br/>
                 By clicking the link on the cell on the left you will get a page on how to send the information

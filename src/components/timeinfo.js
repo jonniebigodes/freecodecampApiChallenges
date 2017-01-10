@@ -1,5 +1,7 @@
-import React, {Component} from 'react';
+import '../Assets/styleSheets/base.scss';
 import Utilities from '../../Challenges/Utils';
+import React, {Component} from 'react';
+
 
 class timeInfo extends Component {
     renderWithParams(){
@@ -7,12 +9,20 @@ class timeInfo extends Component {
             let itemResult= Utilities.getTimeInformation(this.props.params.dataTime);
 
             return (
-                <h3>Unix time stamp:{itemResult.unixTimeStamp} Natural Date:{itemResult.unixTimeStamp}</h3>
+                <h3>Unix time stamp: {itemResult.unixTimeStamp} Natural Date: {itemResult.NaturalDate}</h3>
             );
         }
         return(
             <div>
-                banana
+                
+                <div className="textChallenges">
+                    Example usage:<p/>
+                    Natural Date:<br/>
+                    https://freecodecampapichallenges.herokuapp.com/time/Month%20Day%20Year<p/>
+                    Unix Time Stamp:<br />
+                    https://freecodecampapichallenges.herokuapp.com/time/10023212312<p/>
+                    
+                </div>
             </div>
         );
     }
@@ -22,10 +32,10 @@ class timeInfo extends Component {
         return ( 
             //<div className={classnames('timeInfo', className)} {...props}>
             <div className="timeInfo">
-                <div id = "projectTitle" >
+                <div className = "projectTitle" >
                     Supercalifragilistic API  time information microservice
                 </div>
-                <div>
+                <div className="voffset5">
                     {this.renderWithParams()}
                 </div>
             </div>

@@ -10,8 +10,20 @@ The challenges are the following
   - Image Search Abstraction Layer
   - File Metadata Microservice
 
-
-
+# Methodology used
+Instead of creating a single repo for each challenge and as i'm familiar with github i condensed the api challenges in one package/repo.
+As it's not in direct contradiction of the rules and/or objective.
+In terms of development methodology i used the following:
+  - Challenges
+    - This folder contains the logic bits for the challenges that required some extra logic used.
+  - /src/
+    - this folder contains all the view implementation and also the routing logic used. 
+  - /src/components
+    - Inside this folder are the components i.e views used for the challenges
+  - /dist/
+    - This folder contains the release(aka build files).
+  - /uploads/
+    - This folder contains the placeholder for the File Metadata challenge upload info
 
 
 

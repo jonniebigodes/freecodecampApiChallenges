@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-
+import '../Assets/styleSheets/base.scss';
 class fileMetadata extends Component{
     
     render(){
-       return( <div className="">
-            <div className="metadataTitle">
+       return( <div>
+            <div className="projectTitle">
                 SuperCalifragilistic file metadata parser
             </div>
-            <div>
+            <div className="textChallenges">
                 <h3>File Upload</h3>
                 Select a file to upload and parse information:<br />
 
