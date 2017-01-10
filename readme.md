@@ -14,7 +14,7 @@ The challenges are the following
 Instead of creating a single repo for each challenge and as i'm familiar with github i condensed the api challenges in one package/repo.
 As it's not in direct contradiction of the rules and/or objective.
 In terms of development methodology i used the following:
-  - Challenges
+  - /Challenges/
     - This folder contains the logic bits for the challenges that required some extra logic used.
   - /src/
     - this folder contains all the view implementation and also the routing logic used. 
