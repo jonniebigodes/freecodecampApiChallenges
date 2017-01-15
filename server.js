@@ -23,6 +23,12 @@ if(process.env.NODE_ENV !== 'production') {
   app.use(webpackHotMiddleware(compiler));
 }
 
+if (process.env.NODE_ENV==='production'){
+    app.set('MONGODB',process.env.PROD_MONGODB);
+}
+else{
+    app.set('MONGODB','');
+}
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
