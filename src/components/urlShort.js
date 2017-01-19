@@ -14,6 +14,7 @@ class urlShort extends Component{
                     Example shortener creation usage:<p/>
                     https://freecodecampapichallenges.herokuapp.com/api/newurl/http://www.google.com<p/>
                     Example result output:<br />
+                    
                     "original_url":"http://www.google.com, "shortened_url":"https://freecodecampapichallenges.herokuapp.com/api/short/8888" <p/>
                     To get a list of the urls introduced use the following url:<p/>
                     https://freecodecampapichallenges.herokuapp.com/api/listurls
