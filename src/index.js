@@ -11,6 +11,7 @@ import {Router,Route,browserHistory} from 'react-router';
 render(
     <Router history={browserHistory}>
         <Route path="/" component={App} />
+        <Route path="/urlshort" component={urlShort}/>
         <Route path="/fileinfo" component={fileMetadata}/>
         <Route path="/time/(:dataTime)" component={timeInfo}/>
         <Route path="/urlshort" component={urlShort}/>
