@@ -1,6 +1,6 @@
 # freecodecampApiChallenges
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+
 
 This repository contains the implementation of the api challenges for freecodecamp.
 The challenges are the following

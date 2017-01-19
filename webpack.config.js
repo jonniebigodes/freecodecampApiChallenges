@@ -7,12 +7,16 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.js?$/, loader: 'babel', exclude: /node_modules/ },
+      {
+        test: /\.js?$/, 
+        loader: 'babel',
+        exclude: /node_modules/ 
+      },
       { test: /\.s?css$/, loader: 'style!css!sass' },
     ]
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js','.jsx']
   },
   output: {
     path: path.join(__dirname, '/dist'),

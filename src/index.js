@@ -4,6 +4,7 @@ import App from './components/App';
 import timeInfo from './components/timeinfo';
 import NotFound from './components/notFound';
 import fileMetadata from './components/fileMetaData';
+import urlShort from './components/urlShort';
 import {Router,Route,browserHistory} from 'react-router';
 
 
@@ -12,9 +13,8 @@ render(
         <Route path="/" component={App} />
         <Route path="/fileinfo" component={fileMetadata}/>
         <Route path="/time/(:dataTime)" component={timeInfo}/>
+        <Route path="/urlshort" component={urlShort}/>
         <Route path="*" component={NotFound}/> 
-       
-        
     </Router>,
     document.getElementById('root')
 );

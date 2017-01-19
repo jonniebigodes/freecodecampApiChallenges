@@ -40,7 +40,7 @@ class App extends Component {
                 <a href="https://freecodecampapichallenges.herokuapp.com/fileinfo" target="_blank">/fileinfo</a>
               </div>
               <div className="divTableCell">
-                 Endpoint that implements the challenge Url shortener located at <a href="https://www.freecodecamp.com/challenges/file-metadata-microservice" target="_blank">here</a>.<br/>
+                 Endpoint that implements the challenge for parsing the file information located at <a href="https://www.freecodecamp.com/challenges/file-metadata-microservice" target="_blank">here</a>.<br/>
                  By clicking the link on the cell on the left you will get a page on how to send the information
               </div>
             </div>

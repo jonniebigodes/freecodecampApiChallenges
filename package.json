@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "webpack -d --watch",
-    "postinstall": "webpack -p --config webpack.prod.config.js"
+    "postinstall": "webpack -p --config webpack.prod.config.js",
+    "showerrors": "webpack --progress --color --watch --display-error-details",
+    "showinfo": "webpack --display-modules --display-reasons",
+    "showinfofile":"webpack --json>stats.json"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,7 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "0.23.1",
     "express": "^4.14.0",
+    "mongodb": "^2.2.21",
     "multer": "^1.2.1",
     "node-sass": "^3.4.2",
     "react": "^15.0.1",
