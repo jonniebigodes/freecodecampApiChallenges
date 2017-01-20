@@ -49,7 +49,9 @@ app.get('/whoami',function(request,response){
     
 });
 
-
+app.get('/api/:searchEngine/:searchWords/(:offset)',function(request,response){
+    
+});
 
 /**
  * endpoints for url shortener challenge

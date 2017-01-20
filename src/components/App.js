@@ -45,8 +45,13 @@ class App extends Component {
               </div>
             </div>
             <div className="divTableRow">
-              <div className="divTableCell">&nbsp;</div>
-              <div className="divTableCell">&nbsp;</div>
+              <div className="divTableCell">
+                <a href="https://freecodecampapichallenges.herokuapp.com/imgSearch" target="_blank">/imgSearch</a>
+               </div>
+              <div className="divTableCell">
+                Endpoint that implements the challenge for parsing the file information located at <a href="https://www.freecodecamp.com/challenges/image-search-abstraction-layer" target="_blank">here</a>.<br/>
+                By clicking the link on the cell on the left you will get a page on how to send the information
+              </div>
             </div>
           </div>
         </div>
