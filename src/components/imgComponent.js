@@ -28,6 +28,7 @@ class imgComponent extends Component{
                      Example result output:<br />
                      
                 </div>
+                <hr/>
                 <div className="voffset2">
                     {this.getExampleResponse()}
                 </div>

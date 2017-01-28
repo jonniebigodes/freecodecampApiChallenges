@@ -1,11 +1,22 @@
+/**
+ * module to handle the logic behind the image search challenge
+ */
 (function(){
-    
+    // class constants
     const googleendPoint="https://www.googleapis.com/customsearch/v1?";
     const twitterendPoint="https://search.twitter.com/search.json";
     const instagramendPoint="";
+    //
+    // sanitized query to google/instagram/twitter
     var result= {engineused:"",searchEngine:"",numItems:0,keyapi:"",keysecret:"",numQueries:0,escapedQuery:"",apitwitterencoded:""};
+    //
+
     var queryescape= require('querystring');
     module.exports={
+        /**function to redirect the and sanitize the information on the request
+         * @param valueParams object containing the information on the request
+         * @returns sanitized object
+         */
         searchImages:function(valueParams){
             var result={};
             switch (valueParams.engineused) {
@@ -32,15 +43,21 @@
             result.searchEngine="NOT";
             return result;
         },
+        /**
+         * function to handle the construction of the object for making a google image request
+         * @param object containing the information of the request
+         * @return object properly formatted for making a google request
+         */
         searchGoogleImages:function(valueParams){
-            //var result= {engineused:"",searchEngine:"",numItems:0,keyapi:"",keysecret:"",numQueries:0,escapedQuery:""};
+            //assings property values
             result.searchEngine= googleendPoint;
             result.keyapi=valueParams.googleApiKey;
             result.keysecret= valueParams.googleApiCx;
             result.engineused="google";
-            //console.log("WORDS SEARCH: "+valueParams.wordsSearch);
+            
             result.escapedQuery= queryescape.stringify({query:valueParams.wordsSearch});
-            //console.log("WORDS SEARCH: "+result.escapedQuery);
+            //
+            // checks the offset and sets the value of queries accordingly
             if (valueParams.Queryoffset>10){
                 result.numItems=10;
                 result.numQueries= parseInt(valueParams.Queryoffset/10);
@@ -50,17 +67,28 @@
                 result.numItems=valueParams.Queryoffset;
                 
             }
-            console.log("SANITIZE NUM QUERIES: "+ result.numQueries);
+            //
+            
             return result;
         },
+        /**
+         * function to handle the sanitize and construction of query sent to twitterBase64Info
+         * @param object containing information in the request
+         * @return object properly formatted for twitter requesting
+         */
         searchTwitter:function(valueParams){ 
-            //var result= {engineused:"",searchEngine:"",numItems:0,keyapi:"",keysecret:"",numQueries:0,escapedQuery:""};
+            
             result.searchEngine="twitter";
             result.escapedQuery= queryescape.stringify({query:valueParams.wordsSearch});
             result.numItems= valueParams.Queryoffset;
             result.apitwitterencoded= convertToBase64(valueParams.apiTwitterConsumerKey+":"+valueParams.apiTwitterConsumerSecret);
             return result;
         },
+        /**
+         * function to handle the conversion of a string to base64
+         * @param value the string to be converted
+         * @return base64 encoded string
+         */
         convertToBase64:function(value){
             try {
                 var tmpBuffer= new Buffer(value);

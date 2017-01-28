@@ -25,6 +25,10 @@ class urlShort extends Component{
                         https://freecodecampapichallenges.herokuapp.com/api/short/8888 <p/>
                      </div>
                 </div>
+                <hr/>
+                <div className="footer">
+                    Made by <a href="https://www.freecodecamp.com/jonniebigodes" target="_blank">Jonniebigodes</a>
+                </div>
             </div>
         );
     }

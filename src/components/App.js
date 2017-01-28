@@ -1,6 +1,8 @@
 import '../Assets/styleSheets/base.scss';
 import React,{Component} from 'react';
-
+/**
+ * base component for the app
+ */
 class App extends Component {
  
   render() {
@@ -46,7 +48,7 @@ class App extends Component {
             </div>
             <div className="divTableRow">
               <div className="divTableCell">
-                <a href="https://freecodecampapichallenges.herokuapp.com/imgSearch" target="_blank">/imgSearch</a>
+                <a href="https://freecodecampapichallenges.herokuapp.com/imgSearch" target="_blank">/imgsearch</a>
                </div>
               <div className="divTableCell">
                 Endpoint that implements the challenge for parsing the file information located at <a href="https://www.freecodecamp.com/challenges/image-search-abstraction-layer" target="_blank">here</a>.<br/>

@@ -56,17 +56,6 @@ app.get('/whoami', function (request, response) {
 });
 
 /**
- * mock endpoint for http request testing purposes
- */
-app.get('/api/mock', function (request, response) {
-    //httpService.mockGoogleRequest();
-    httpService.mocktwitter();
-    response.end('MOCKING');
-});
-
-
-
-/**
  * endpoint for imagesearch challenge
  * @param request contains the request data from the user
  * @param response will send the response to the user
@@ -164,16 +153,6 @@ app.get('/api/imgsearch', function (request, response) {
         });
     });
 
-
-
-
-
-
-
-
-    //response.send(JSON.stringify(sanitizedItemSearch));
-
-
 });
 /**
  * endpoint to get the latest searches
@@ -233,14 +212,13 @@ app.get('/api/newurl/*', function (request, response) {
 
             });
 
-            //dbfac.getItembyName('urls',paramadd);
+            
         });
     } else {
         response.end("The url provided is not in the correct form");
     }
 
-    //console.log('params:'+ request.params[0]);
-    //response.end('soon you will know url '+request.params[0]);
+    
 });
 
 
@@ -312,6 +290,8 @@ app.get('*', function (request, response) {
 
 /**
  * function to set up the listener for the requests
+ * @param port is the port defined above
+ * @param callback is the callback to be activated
  * 
  */
 app.listen(app.get('port'), function (error) {

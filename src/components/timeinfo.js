@@ -27,10 +27,9 @@ class timeInfo extends Component {
         );
     }
     render() {
-        //console.log(this.props.params.dataTime);
-        //const { className, ...props } = this.props;
+        
         return ( 
-            //<div className={classnames('timeInfo', className)} {...props}>
+            
             <div className="timeInfo">
                 <div className = "projectTitle" >
                     Supercalifragilistic API  time information microservice
@@ -38,8 +37,13 @@ class timeInfo extends Component {
                 <div className="voffset5">
                     {this.renderWithParams()}
                 </div>
-            </div>
 
+                <hr/>
+                <div className="footer">
+                    Made by <a href="https://www.freecodecamp.com/jonniebigodes" target="_blank">Jonniebigodes</a>
+                </div>
+            </div>
+            
 
         )
     }

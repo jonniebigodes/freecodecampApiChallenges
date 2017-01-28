@@ -16,8 +16,12 @@ class fileMetadata extends Component{
                     <input type="submit" value="Upload" name="submit"/>
                 </form>
             </div>
-
-        </div>)
+            <hr/>
+            <div className="footer">
+                    Made by <a href="https://www.freecodecamp.com/jonniebigodes" target="_blank">Jonniebigodes</a>
+            </div>
+        </div>
+        )
         
     }
 };

@@ -21,4 +21,3 @@ render(
     </Router>,
     document.getElementById('root')
 );
-//render(<App name='World'/>, document.getElementById('root'));
