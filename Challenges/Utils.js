@@ -1,7 +1,7 @@
 var headerChallenge= require('./headerChallenge/headerParseModule.js');
 var timeCheck= require('./timeCheckChallenge/timeCheckerModule.js');
 var urlData= require('./UrlshortChallenge/urlShortenerModule.js');
-
+var imgGet= require('./imageSearch/imgSearchModule.js');
 module.exports={
     CheckNum:function(value){
       return /^\d+$/.test(value);  
@@ -20,5 +20,10 @@ module.exports={
     },
     UrlValidate:function(value){
         return urlData.validateUrl(value);
+    },
+    imagesSearch:function(value){
+        return imgGet.searchImages(value);
+
+        
     }
 };

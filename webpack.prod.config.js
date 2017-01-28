@@ -11,8 +11,22 @@ config.plugins.push(
 
 config.plugins.push(
   new webpack.optimize.UglifyJsPlugin({
+    comments:false,
+    //added for compression
+    mangle:true,
+    //
     compress: {
-      warnings: false
+      warnings: false,
+      //added for compression
+      sequences: true,
+		  dead_code: true,
+		  conditionals: true,
+		  booleans: true,
+		  unused: true,
+		  if_return: true,
+		  join_vars: true,
+		  drop_console: true,
+      screw_ie8: true
     }
   })
 );
