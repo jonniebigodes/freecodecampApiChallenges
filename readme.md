@@ -37,6 +37,9 @@ this set of challenges uses a number of open source projects to work properly:
 * [Mongodb] - Best of relational with the innovations of NOSQL
 * [Unirest] - Simple http request package
 * [Async] - Async pattern package
+
+
+
 And of course the implementation of the challenges themselves are open source with a [git-repo-url]
  on GitHub.
 
