@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     app.set('MONGODB', 'mongodb://localhost:27017/urlshort');
 }
-app.set('GOOGLE_KEY', process.env.GOOGLEAPI);
+app.set('GOOGLE_KEY', process.env.GOOGLE_KEY);
 app.set('GOOGLE_CX', process.env.GOOGLEAPICX);
 
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -75,6 +75,7 @@ app.get('/api/mock', function (request, response) {
  * @param offset (optional item to get the number of items in the search)
  */
 app.get('/api/imgsearch', function (request, response) {
+    
     var tmpItemSearch = {
         engineused: "",
         wordsSearch: "",
@@ -115,7 +116,9 @@ app.get('/api/imgsearch', function (request, response) {
         tmpItemSearch.googleApiKey = app.get('GOOGLE_KEY');
         tmpItemSearch.googleApiCx = app.get('GOOGLE_CX');
     }
+   
 
+    
     tmpItemSearch.wordsSearch = request.query.keywords;
     tmpItemSearch.engineused = request.query.engine;
     // verificar se a pesquisa ja foi feita mongodb sim devolve os resultados caso contrario processa a pesquisa
@@ -132,7 +135,7 @@ app.get('/api/imgsearch', function (request, response) {
                     if(data){
                         dbfac.close();
                         response.send(JSON.stringify(data));
-                        
+
                     }
                 });
 
