@@ -35,7 +35,8 @@ this set of challenges uses a number of open source projects to work properly:
 * [Express] - fast node.js network app framework 
 * [Webpack] - fast packaging framework for deployment
 * [Mongodb] - Best of relational with the innovations of NOSQL
-
+* [Unirest] - Simple http request package
+* [Async] - Async pattern package
 And of course the implementation of the challenges themselves are open source with a [git-repo-url]
  on GitHub.
 
@@ -75,4 +76,5 @@ MIT
    [Webpack]: <https://webpack.github.io/>
    [Mongodb]: <https://www.mongodb.com/>
    [PlGh]:  <https://github.com/jonniebigodes/freecodecampApiChallenges/tree/master/plugins/github/readme.md>
-   
+   [Unirest]: <http://unirest.io/nodejs.html>
+   [Async]: <https://github.com/caolan/async>
