@@ -48,7 +48,7 @@ And of course the implementation of the challenges themselves are open source wi
 
 ### Installation from source
 
-freecodecamp api  requires [Node.js](https://nodejs.org/) v4+ to run.
+freecodecamp api  requires [Node.js](https://nodejs.org/) v5+ to run.
 
 Download and extract the [latest pre-built release](https://github.com/jonniebigodes/freecodecampApiChallenges/releases).
 
