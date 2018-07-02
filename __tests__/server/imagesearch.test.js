@@ -79,7 +79,7 @@ describe('/GET make a new search',()=>{
             }
             res.should.have.status(200);
             res.body.should.have.property('query').eql('banana');
-            res.body.data.length.should.eql(10);
+            res.body.queryresults.length.should.eql(10);
             done();
         })
     });
@@ -95,7 +95,7 @@ describe('/GET make search already stored',()=>{
             }
             res.should.have.status(200);
             res.body.should.have.property('query').eql('banana');
-            res.body.data.length.should.eql(10);
+            res.body.queryresults.length.should.eql(10);
             done();
         })
     });

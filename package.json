@@ -4,6 +4,7 @@
   "description": "freecodecamp api challenges app",
   "main": "server.js",
   "scripts": {
+    "testprod":"cross-env NODE_ENV=production npm start",
     "testclient": "jest .test.js --config=jest.config.json",
     "testserver": "mocha --compilers js:babel-core/register --require babel-polyfill \"__tests__/server/**/*.js\" --exit --timeout 30000",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
@@ -24,8 +25,8 @@
     "buildimages": "babel ./src/Challenges/imageSearch/ImgSearcher.js -o ./lib/ImgSearcher.js --presets minify",
     "buildtime": "babel ./src/Challenges/timeCheckChallenge/timeChecker.js -o ./lib/timeChecker.js --presets minify",
     "buildshorter": "babel ./src/Challenges/UrlshortChallenge/UrlShortener.js -o ./lib/UrlShortener.js --presets minify",
-    "build": "npm run buildserver && npm run buildlogger && npm run buildmodels && npm run buildexercises && npm run buildheader && npm run buildimages && npm run buildtime && npm run buildtime",
-    "buildclient":"webpack --config webpack.prod.config.js --progress --colors",
+    "build": "npm run buildserver && npm run buildlogger && npm run buildmodels && npm run buildexercises && npm run buildheader && npm run buildimages && npm run buildtime && npm run buildshorter",
+    "buildclient": "webpack --config webpack.prod.config.js --progress --colors",
     "postinstall": "npm run build && npm run buildclient"
   },
   "repository": {
@@ -99,6 +100,7 @@
     "babel-jest": "^23.2.0",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
+    "cross-env": "^5.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",

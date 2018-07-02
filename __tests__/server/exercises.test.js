@@ -54,7 +54,7 @@ describe('/POST an exercise by invalid params=>desc',()=>{
         .post('/api/exercise')
         .send({
             duration:200,
-            userid:1
+            userdata:1
         })
         .end((err,res)=>{
             if (err){
@@ -72,7 +72,7 @@ describe('/POST an exercise by invalid params=>duration',()=>{
         .post('/api/exercise')
         .send({
             desc:'banana',
-            userid:1
+            userdata:1
         })
         .end((err,res)=>{
             if (err){
@@ -90,7 +90,7 @@ describe('/POST an exercise by invalid params=>duration not int',()=>{
         .post('/api/exercise')
         .send({
             desc:'banana',
-            userid:1,
+            userdata:1,
             duration:'ssss'
         })
         .end((err,res)=>{
@@ -110,7 +110,7 @@ describe('/POST an exercise by invalid params=>duration not int',()=>{
         .send({
             duration:200,
             desc:'banana1',
-            userid:1
+            userdata:1
         })
         .end((err,res)=>{
             if (err){
@@ -129,7 +129,7 @@ describe('/POST an exercise valid params with invalid date',()=>{
         .send({
             duration:300,
             desc:'banana2',
-            userid:1,
+            userdata:1,
             exercisedate:'2018-13-32'
         })
         .end((err,res)=>{
@@ -149,7 +149,7 @@ describe('/POST an exercise valid params with valid date',()=>{
         .send({
             duration:200,
             desc:'banana',
-            userid:1,
+            userdata:1,
             exercisedate:'2018-06-21'
 
         })

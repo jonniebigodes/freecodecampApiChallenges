@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import { unlink } from 'fs';
 import mongoose from 'mongoose';
 import express from 'express';
@@ -6,8 +7,10 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import logger from './logger';
 
+console.log(`process.env.NODE_ENV=>${process.env.NODE_ENV}`);
+
 const UserModel= process.env.NODE_ENV!=='production'?require('./src/models/Users.model').default:require('./Users.model').default;
-const UrlModel=process.env.NODE_ENV!=='production'?require('./src/models/Urls.model').default:require('./Users.model').default;
+const UrlModel=process.env.NODE_ENV!=='production'?require('./src/models/Urls.model').default:require('./Urls.model').default;
 const ExerciseModel= process.env.NODE_ENV!=='production'?require('./src/models/Exercises.model').default:require('./Exercises.model').default;
 const SearchModel= process.env.NODE_ENV!=='production'?require('./src/models/Searches.model').default:require('./Searches.model').default;
 const SearchResultsModel= process.env.NODE_ENV!=='production'?require('./src/models/Searchresults.model').default:require('./Searchresults.model').default;
