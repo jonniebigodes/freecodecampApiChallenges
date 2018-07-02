@@ -148,7 +148,7 @@ router.route('/short')
         }
         const result= createShortUrl({url:req.body.url,urls:savedurls});
 
-        logger.error(`result createShortUrl=>${JSON.stringify(result,null,2)}`)
+        logger.warn(`result create short url=>${JSON.stringify(result,null,2)}`);
         
 
         if (result.shortId===-1){
