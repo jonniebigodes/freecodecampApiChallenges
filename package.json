@@ -8,7 +8,7 @@
     "testserver": "mocha --compilers js:babel-core/register --require babel-polyfill \"__tests__/server/**/*.js\" --exit --timeout 30000",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
-    "start": "node ./lib/server.bundle.js",
+    "start": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -d --watch",
     "showerrors": "webpack --progress --color --watch --display-error-details",
     "showinfo": "webpack --display-modules --display-reasons",
@@ -24,7 +24,7 @@
     "buildimages": "babel ./src/Challenges/imageSearch/ImgSearcher.js -o ./lib/ImgSearcher.js --presets minify",
     "buildtime": "babel ./src/Challenges/timeCheckChallenge/timeChecker.js -o ./lib/timeChecker.js --presets minify",
     "buildshorter": "babel ./src/Challenges/UrlshortChallenge/UrlShortener.js -o ./lib/UrlShortener.js --presets minify",
-    "build": "npm run buildserver && npm run buildlogger",
+    "build": "npm run buildserver && npm run buildlogger && npm run buildmodels && npm run buildexercises && npm run buildheader && npm run buildimages && npm run buildtime && npm run buildtime",
     "postinstall": "npm run build && webpack --config webpack.prod.config.js --progress --colors"
   },
   "repository": {
