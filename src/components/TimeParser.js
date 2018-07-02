@@ -4,7 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import '../Assets/styleSheets/base.scss'
 
-class TimeInfo extends Component {
+class TimeParser extends Component {
   state = {
     timeSend: '',
     converted: {},
@@ -126,4 +126,4 @@ class TimeInfo extends Component {
     )
   }
 }
-export default TimeInfo
+export default TimeParser

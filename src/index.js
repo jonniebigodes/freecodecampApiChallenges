@@ -3,7 +3,7 @@ import {render} from 'react-dom'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import App from './components/App'
 import WhoAmi from './components/Whoami'
-// import TimeInfo from './components/Timeinfo'
+import TimeParser from './components/TimeParser'
 // import NotFound from './components/NotFound'
 import FileInformation from './components/FileInformation'
 import Shortener from './components/Shortener'
@@ -15,7 +15,7 @@ render(
   <BrowserRouter>
     <Switch>
       <Route path="/whoami" exact component={WhoAmi} />
-      {/* <Route path="/time" exact component={TimeInfo} /> */}
+      <Route path="/time" exact component={TimeParser} />
       <Route path="/fileupload" exact component={FileInformation} />
       <Route path="/shorter" exact component={Shortener} />
       <Route path="/listshort" exact component={Urlist} />
