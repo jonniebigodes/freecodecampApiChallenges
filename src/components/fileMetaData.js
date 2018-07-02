@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 import '../Assets/styleSheets/base.scss'
 
-class FileMetaInfo extends Component {
+class FileMetaData extends Component {
   state = {
     fileName: '',
     filetype: '',
@@ -88,4 +88,4 @@ class FileMetaInfo extends Component {
     )
   }
 }
-export default FileMetaInfo
+export default FileMetaData
