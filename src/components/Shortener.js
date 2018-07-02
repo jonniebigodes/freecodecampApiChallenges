@@ -40,7 +40,7 @@ class Shortener extends Component {
       })
       .catch(err => {
         console.log(
-          `ERROR GETTING DTIME ATA=>${JSON.stringify(err.message, null, 2)}`
+          `ERROR GETTING TIME ATA=>${JSON.stringify(err.response, null, 2)}`
         )
         this.setState({isError: true})
       })

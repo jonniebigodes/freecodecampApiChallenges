@@ -21,9 +21,6 @@ class Urlist extends Component {
         : 'https://freecodecampapichallenges.herokuapp.com/api/short'
     )
       .then(result => {
-        console.log('====================================')
-        console.log(`result data=>${JSON.stringify(result.data, null, 2)}`)
-        console.log('====================================')
         this.setState({shortUrls: result.data})
       })
       .catch(err => {

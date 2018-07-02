@@ -147,6 +147,11 @@ router.route('/short')
             return res.status(500).json({message:'url already added'});
         }
         const result= createShortUrl({url:req.body.url,urls:savedurls});
+
+        console.log('====================================');
+        console.log(`result createShortUrl=>${JSON.stringify(result,null,2)}`);
+        console.log('====================================');
+        
         if (result.shortId===-1){
             mongoose.disconnect();
             return res.status(500).json({message:'Invalid URL'});
