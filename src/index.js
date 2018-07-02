@@ -6,7 +6,7 @@ import WhoAmi from './components/Whoami'
 // import TimeInfo from './components/Timeinfo'
 // import NotFound from './components/NotFound'
 import FileInformation from './components/FileInformation'
-// import UrlShort from './components/UrlShort'
+import Shortener from './components/Shortener'
 import Urlist from './components/UrlList'
 import imgComponent from './components/imgComponent'
 import Exercises from './components/Exercises'
@@ -17,7 +17,7 @@ render(
       <Route path="/whoami" exact component={WhoAmi} />
       {/* <Route path="/time" exact component={TimeInfo} /> */}
       <Route path="/fileupload" exact component={FileInformation} />
-      {/* <Route path="/shorter" exact component={UrlShort} /> */}
+      <Route path="/shorter" exact component={Shortener} />
       <Route path="/listshort" exact component={Urlist} />
       <Route path="/imgsearch" exact component={imgComponent} />
       <Route path="/exercises" exact component={Exercises} />

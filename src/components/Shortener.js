@@ -4,7 +4,8 @@ import Footer from './Footer'
 import Header from './Header'
 import '../Assets/styleSheets/base.scss'
 
-class UrlShort extends Component {
+class Shortener extends Component {
+
   state = {
     url: '',
     shortData: {},
@@ -139,4 +140,4 @@ class UrlShort extends Component {
     )
   }
 }
-export default UrlShort
+export default Shortener
