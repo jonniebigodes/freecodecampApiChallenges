@@ -15,7 +15,6 @@
     "showinfofile": "webpack --json>stats.json",
     "devserver": "nodemon server.js --exec babel-node",
     "devclient": "webpack-dev-server --mode development --open",
-    "build": "npm run buildserver && npm run buildlogger && npm run buildmodels && npm run buildexercises && npm run buildheader && npm run buildimages && npm run buildtime && npm run buildtime",
     "builddev": "webpack --config webpack.config.js --progress --colors --mode development",
     "buildserver": "babel server.js -o ./lib/server.bundle.js --presets minify",
     "buildlogger": "babel logger.js -o ./lib/logger.js --presets minify",
@@ -25,6 +24,7 @@
     "buildimages": "babel ./src/Challenges/imageSearch/ImgSearcher.js -o ./lib/ImgSearcher.js --presets minify",
     "buildtime": "babel ./src/Challenges/timeCheckChallenge/timeChecker.js -o ./lib/timeChecker.js --presets minify",
     "buildshorter": "babel ./src/Challenges/UrlshortChallenge/UrlShortener.js -o ./lib/UrlShortener.js --presets minify",
+    "build": "npm run buildserver && npm run buildlogger",
     "postinstall": "npm run build && webpack --config webpack.prod.config.js --progress --colors"
   },
   "repository": {
