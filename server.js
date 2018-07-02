@@ -475,11 +475,11 @@ router.get('/imagesearch/latest',async(req,res)=>{
  */
 app.get('*', (req,response) => {
     if (process.env.NODE_ENV!=='production'){
-        response.sendFile('index.html',{root:path.join(__dirname,'./dist/')});
+        return response.sendFile('index.html',{root:path.join(__dirname,'./dist/')});
     }
     // process.env.NODE_ENV!=='production'?
     // response.sendFile('index.html',{root:path.join(__dirname,'./dist/')}):
-    response.sendFile('index.html',{root:path.join(__dirname,'../dist/')});
+    return response.sendFile('index.html',{root:path.join(__dirname,'../dist/')});
     // response.sendFile(`${__dirname  }/dist/index.html`);
 });
 
