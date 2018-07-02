@@ -37,6 +37,9 @@ if (process.env.NODE_ENV!=='production'){
     const config= require('dotenv').config();
     app.use(express.static(path.join(__dirname, 'dist')));
 }
+else{
+    app.use(express.static(path.join(__dirname, '../dist')));
+}
 
 //
 if (process.env.NODE_ENV!=='production'){
