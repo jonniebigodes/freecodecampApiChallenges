@@ -1,43 +1,112 @@
-import '../Assets/styleSheets/base.scss';
-import React,{Component} from 'react';
+import React, {Component} from 'react'
+import Axios from 'axios'
+import Header from './Header'
+import Footer from './Footer'
+import ImageItem from './ImageItem'
+import '../Assets/styleSheets/base.scss'
 
-class imgComponent extends Component{
-    getExampleResponse(){
-        return JSON.stringify({"status":200,"itemsResultMultiple":[{"status":200,"errorInfo":"","results":[{"title":"There's More Than One Way To Query A Cat | Sub It Club","linkurl":"https://subitclub.files.wordpress.com/2013/04/litagentlolcat.jpg","height":450,"width":500,"filesize":27803},{"title":"SBU Captioned Photo Dataset: Search","linkurl":"http://tlberg.cs.unc.edu/vicente/im2text/0001/979.jpg","height":428,"width":512,"filesize":47946},{"title":"Pardon the Interruption - Duetto","linkurl":"http://www.duettoresearch.com/blog/wp-content/uploads/2013/05/cat_sleep-e1369780996432.jpg","height":350,"width":298,"filesize":25847},{"title":"veterinary medicine, surgery, singapore, toa payoh vets, dogs ...","linkurl":"http://www.kongyuensing.com/laws/20150105nostril_scar_not_cancer_owner_query_cat.jpg","height":513,"width":800,"filesize":141430},{"title":"1000+ images about Funny cats on Pinterest | Funny pets, Funny ...","linkurl":"https://s-media-cache-ak0.pinimg.com/736x/1d/1a/6f/1d1a6fc2a6e38dbda1c4630fdc5aa3ac.jpg","height":559,"width":721,"filesize":92881},{"title":"Uncategorized | Denton Writers' Critique Group","linkurl":"https://dentoncritique.files.wordpress.com/2016/04/cool-cat.jpg","height":373,"width":560,"filesize":47874},{"title":"Query Letter Humor: My Pet Cat Wants to Kill Me | Rin Chupeco","linkurl":"http://www.rinchupeco.com/wp-content/uploads/2012/12/assassincat2.png","height":466,"width":348,"filesize":184647},{"title":"a sql query walks into a bar and sees two tables he says, can i ...","linkurl":"https://cdn.meme.am/cache/instances/folder106/66988106.jpg","height":661,"width":500,"filesize":255323},{"title":"A well, Each day and Pet cats on Pinterest","linkurl":"https://s-media-cache-ak0.pinimg.com/564x/76/13/6f/76136f5d084a900073a60b68bae70b8e.jpg","height":460,"width":492,"filesize":29003},{"title":"Siebel, Service Request, Query Cat Meme - Cat Planet | Cat Planet","linkurl":"http://catplanet.org/wp-content/uploads/2014/09/Siebel-service-request.jpg","height":400,"width":400,"filesize":53216}]},{"status":200,"errorInfo":"","results":[{"title":"There's More Than One Way To Query A Cat | Sub It Club","linkurl":"https://subitclub.files.wordpress.com/2013/04/litagentlolcat.jpg","height":450,"width":500,"filesize":27803},{"title":"SBU Captioned Photo Dataset: Search","linkurl":"http://tlberg.cs.unc.edu/vicente/im2text/0001/979.jpg","height":428,"width":512,"filesize":47946},{"title":"Pardon the Interruption - Duetto","linkurl":"http://www.duettoresearch.com/blog/wp-content/uploads/2013/05/cat_sleep-e1369780996432.jpg","height":350,"width":298,"filesize":25847},{"title":"veterinary medicine, surgery, singapore, toa payoh vets, dogs ...","linkurl":"http://www.kongyuensing.com/laws/20150105nostril_scar_not_cancer_owner_query_cat.jpg","height":513,"width":800,"filesize":141430},{"title":"1000+ images about Funny cats on Pinterest | Funny pets, Funny ...","linkurl":"https://s-media-cache-ak0.pinimg.com/736x/1d/1a/6f/1d1a6fc2a6e38dbda1c4630fdc5aa3ac.jpg","height":559,"width":721,"filesize":92881},{"title":"Uncategorized | Denton Writers' Critique Group","linkurl":"https://dentoncritique.files.wordpress.com/2016/04/cool-cat.jpg","height":373,"width":560,"filesize":47874},{"title":"Query Letter Humor: My Pet Cat Wants to Kill Me | Rin Chupeco","linkurl":"http://www.rinchupeco.com/wp-content/uploads/2012/12/assassincat2.png","height":466,"width":348,"filesize":184647},{"title":"a sql query walks into a bar and sees two tables he says, can i ...","linkurl":"https://cdn.meme.am/cache/instances/folder106/66988106.jpg","height":661,"width":500,"filesize":255323},{"title":"A well, Each day and Pet cats on Pinterest","linkurl":"https://s-media-cache-ak0.pinimg.com/564x/76/13/6f/76136f5d084a900073a60b68bae70b8e.jpg","height":460,"width":492,"filesize":29003},{"title":"Siebel, Service Request, Query Cat Meme - Cat Planet | Cat Planet","linkurl":"http://catplanet.org/wp-content/uploads/2014/09/Siebel-service-request.jpg","height":400,"width":400,"filesize":53216}]}]});
+class ImageInfo extends Component {
+  state = {
+    searchquery: '',
+    searchResult: [],
+    isError: false
+  }
+  handleQueryChange = e => {
+    this.setState({searchquery: e.target.value})
+  }
+  submitQuery = () => {
+    Axios.get(
+      process.env.NODE_ENV !== 'production'
+        ? `http://localhost:5000/api/imagesearch?searchquery=${
+            this.state.searchquery
+          }`
+        : `https://freecodecampapichallenges.herokuapp.com/api/imagesearch?searchquery=${
+            this.state.searchquery
+          }`
+    )
+      .then(result => {
+        this.setState({searchResult: result.data.queryresults})
+      })
+      .catch(errdate => {
+        console.log(
+          `error getting the date from image search:${errdate.message}`
+        )
+        this.setState({isError: true})
+      })
+  }
+  fileRandomGenerator = () => {
+    return Math.floor(Math.random() * (999999 - 1 + 1) + 1)
+  }
+  render() {
+    const {isError, searchResult, searchquery} = this.state
+    if (isError) {
+      return (
+        <div key="ErrorView">
+          <Header />
+          <div>
+            Well now that&#39;s awkward looks like something bad happened
+          </div>
+          <Footer />
+        </div>
+      )
     }
-    render(){
-        return (
-            <div className="imageComponent">
-                <div className="projectTitle">
-                    Supercalifragilistic Image Search microservice
-                </div>
-                <div className="voffset5 textChallenges">
-                    Example image search usage:<p/>
-                    https://freecodecampapichallenges.herokuapp.com/api/imgsearch?engine=google&keywords=cat&offset=20
-                    The endpoint above has the following parameters:
-                    <ul>
-                        <li>engine:<br/>The engine to be used.<br/>As off now only google is allowed. </li>
-                        <li>keywords:<br/>The search terms to be used.</li>
-                        <li>offset:<br/>This argument is optional.<br/>If not provided only 10 results will be returned.<br/>Otherwise the number provided here.<br/>As of now only values bellow 100 are allowed</li>
-                    </ul>
-                    <p/>
-                   
-                    
-                </div>
-                <div className="voffset5 textChallenges">
-                     Example result output:<br />
-                     
-                </div>
-                <hr/>
-                <div className="voffset2">
-                    {this.getExampleResponse()}
-                </div>
-                <hr/>
-                <div className="footer">
-                    Made by <a href="https://www.freecodecamp.com/jonniebigodes" target="_blank">Jonniebigodes</a>
-                </div>
+    const imageItems = searchResult.map(item => {
+      return (
+        <ImageItem
+          key={`resultitem_${this.fileRandomGenerator()}`}
+          data={item}
+        />
+      )
+    })
+    return (
+      <div>
+        <Header />
+        <div className="containerProjects">
+          <div className="titles">
+            {' '}
+            Supercalifragilistic image searcher Microservice
+          </div>
+          <div className="timeChallenge">
+            Example shortener creation usage: Use the provided component bellow.
+            Or with your favourite api dev tool like{' '}
+            <a
+              href="https://www.getpostman.com/"
+              target="_noopener"
+              rel="nofollow">
+              Postman
+            </a>{' '}
+            or{' '}
+            <a href="https://curl.haxx.se/" target="_noopener" rel="nofollow">
+              curl
+            </a>{' '}
+            for instance. Create a POST request to{' '}
+            <a
+              href={
+                process.env.NODE_ENV !== 'production'
+                  ? 'http://localhost:5000/api/time'
+                  : 'https://freecodecampapichallenges.herokuapp.com/api/time'
+              }
+              target="_noopener"
+              rel="nofollow">
+              [project_url]/api/time{' '}
+            </a>with a JSON body property of url with the url
+          </div>
+          <div className="containerTime">
+            <div className="timeSubmission">
+              <h5>Enter your query</h5>
+              <input
+                type="text"
+                value={searchquery}
+                onChange={this.handleQueryChange}
+              />
+              <button onClick={this.submitQuery}>Submit</button>
             </div>
-        );
-    }
+          </div>
+        </div>
+        <div className="imagesData">{imageItems}</div>
+        <Footer />
+      </div>
+    )
+  }
 }
-export default imgComponent;
+export default ImageInfo

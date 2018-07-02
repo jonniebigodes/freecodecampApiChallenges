@@ -1,7 +1,5 @@
 # freecodecampApiChallenges
 
-
-
 This repository contains the implementation of the api challenges for freecodecamp.
 The challenges are the following
   - Timestamp Microservice
@@ -9,22 +7,26 @@ The challenges are the following
   - URL Shortener Microservice
   - Image Search Abstraction Layer
   - File Metadata Microservice
+  - Exercise Tracker
 
 # Methodology used
+
 Instead of creating a single repo for each challenge and as i'm familiar with github i condensed the api challenges in one package/repo.
 As it's not in direct contradiction of the rules and/or objective.
 In terms of development methodology i used the following:
-  - /Challenges/
-    - This folder contains the logic bits for the challenges that required some extra logic used.
+  
   - /src/
     - this folder contains all the view implementation and also the routing logic used. 
   - /src/components
     - Inside this folder are the components i.e views used for the challenges
+  - /src/Challenges
+    -Inside this folder is the logic applied to every challenge
   - /dist/
     - This folder contains the release(aka build files).
   - /uploads/
     - This folder contains the placeholder for the File Metadata challenge upload info
-
+  - /lib/
+    - This folder will contain the server and it's dependencies minified.
 
 
 ### Tech
@@ -35,8 +37,7 @@ this set of challenges uses a number of open source projects to work properly:
 * [Express] - fast node.js network app framework 
 * [Webpack] - fast packaging framework for deployment
 * [Mongodb] - Best of relational with the innovations of NOSQL
-* [Unirest] - Simple http request package
-* [Async] - Async pattern package
+* [Axios]   - Simple Promise based http request package
 
 
 
@@ -79,5 +80,5 @@ MIT
    [Webpack]: <https://webpack.github.io/>
    [Mongodb]: <https://www.mongodb.com/>
    [PlGh]:  <https://github.com/jonniebigodes/freecodecampApiChallenges/tree/master/plugins/github/readme.md>
-   [Unirest]: <http://unirest.io/nodejs.html>
-   [Async]: <https://github.com/caolan/async>
+   [Axios]: <https://github.com/axios/axios>
+  

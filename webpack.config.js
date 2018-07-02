@@ -1,35 +1,73 @@
-var webpack = require('webpack');
-var path = require('path');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path= require('path');
+const webpack= require('webpack');
 
 module.exports = {
-  entry: [
-    './src/index'
-  ],
+  entry:"./src/index.js",
+  output:{
+    filename: '[name].bundle.js',
+    path: path.join(__dirname, 'dist'),
+    publicPath:'/'
+  },
+  devtool: 'inline-source-map',
+  devServer:{
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
+    inline: true,
+    compress:true,
+    historyApiFallback: true
+  },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js?$/, 
-        loader: 'babel',
+        test: /\.(js|jsx)$/,
+        use:{
+          loader: "babel-loader"
+        },
         exclude: /node_modules/ 
       },
-      { test: /\.s?css$/, loader: 'style!css!sass' },
+      {
+        test:/\.html$/,
+        use:
+          [
+            {
+              loader:"html-loader",
+              options: { minimize: true }
+            }
+          ]
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
+      },
+      {
+        test:/\.scss$/,
+        use:[
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
+        ]
+      }
     ]
   },
   resolve: {
-    extensions: ['', '.js','.jsx']
-  },
-  output: {
-    path: path.join(__dirname, '/dist'),
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: './dist',
-    hot: true
+    extensions: ['.js','.jsx']
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new HtmlWebPackPlugin(
+      {
+        template:'./src/template/index.html',
+        filename:'./index.html'
+      }
+    ),
+    new CleanWebpackPlugin(['dist']),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }) 
   ]
 };

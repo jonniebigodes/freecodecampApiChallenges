@@ -1,93 +1,238 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed|Merriweather+Sans');
 
-.projectTitle {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 32px;
-    text-align: center;
+.containerProjects{
+    margin:0 auto;
+    max-width: 960px;
+    padding: 1.15rem 1.0875rem;
 }
-.footer{
+.titles{
+    font-family: 'Merriweather', sans-serif;;
+    font-size: 1.3rem;
     text-align: center;
-    font-family: 'Oswald', sans-serif;
-    font-size: 9px;
+    padding: 1.15rem 1.0875rem;
 }
-.textChallenges{
-    font-family: 'Oswald',sans-serif;
-    font-size: 14px;
+.header{
+    background-color: #373737;
+    margin-bottom: 1.15rem;
+}
+.containerHeader{
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 1.15rem 1.0875rem;
+}
+.containerTime{
+    margin: 0 auto;
+}
+.timeSubmission{
+    position: relative;
+    width: 50%;
+    margin: auto;
+    padding: 1.15rem 1.0875rem;
+    box-shadow:  3px 0px 5px 0px rgba(69,77,89,1);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+.HeaderParserChallenge{
+    font-family: 'Merriweather', sans-serif;;
+    font-size: 0.9em;
     text-align: justify;
+    word-wrap: break-word;
+    line-break: auto;
+    line-height: 1.5;
+    padding: 1.15rem 1.0875rem;
 }
-.textBase {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 120;
+.formupload{
+    position: relative;
+    width: 70%;
+    margin: auto;
+    padding: 1.15rem 1.0875rem;
+    box-shadow:  3px 0px 5px 0px rgba(69,77,89,1);
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+.itemContainer{
+    width: 300px;
+    height: 420px;
+    box-shadow:  3px 0px 5px 2px rgba(69,77,89,1);
+    background: #373737;
+    color: #ccc;
+    border-radius: 20px;
+}
+.exercisesInputError{
+    width: 100%;
+    height: 20px;
+    border-color: red;
+}
+.exercisesChallenge{
+    font-family: 'Merriweather', sans-serif;
+    font-size: 0.85rem;
+    text-align: center;
+    word-wrap: break-word;
+    line-break: normal;
+    line-height: 1.5;
+    padding: 1.15rem 1.0875rem;
+}
+.exercisesInfoText{
+    font-family: 'Merriweather', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    word-wrap: break-word;
+    line-break: normal;
+    padding: 0.865rem 0.825rem;
+}
+.formexercise{
+    position: relative;
+    margin:0.85rem 0.85rem;
+}
+.buttonExercise{
+    width:90%;
+    height: 30px;
+    box-shadow:  1px 1px 1px 1px rgba(69,77,89,1);
+}
+.inputExercise{
+    width: 100%;
+    height: 20px;
+}
+.containerExercises{
+    width: 90%;
+    position: relative;
+    margin: auto;
+    padding: 1.15rem 1.0875rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+.timeChallenge{
+    font-family: 'Merriweather', sans-serif;;
+    font-size: 0.8em;
+    text-align: justify;
+    word-wrap: break-word;
+    line-break: auto;
+    line-height: 1.5;
+    padding: 1.15rem 1.0875rem;
+}
+.fileChallenge{
+    font-family: 'Merriweather', sans-serif;;
+    font-size: 0.95em;
+    text-align: justify;
+    word-wrap: break-word;
+    line-break: auto;
+    line-height: 1.5;
+    padding: 1.15rem 1.0875rem;
+}
+.footerstyle{
+    margin-bottom: 0;
+    width: 100%;
+    height:50px;
+    background: transparent;
+    text-align: center;
+    
+}
+.footText{
+    color: #eeeeee;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 0.85rem
+}
+.imagesData{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.imageTitle{
+    font-family: 'Merriweather', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
     text-align: center;
 }
-.divTable{
-	display: table;
-	width: 100%;
-    border: 1px;
+.itemimage{
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: calc(1/3*100% - (1 - 1/3)*10px);
+    background:  #b0b3cc;
+    border: 1px solid #373737;
 }
-.divTableRow {
-	display: table-row;
+.containerImage{
+    border: 1px solid #b0b3cc;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto;
 }
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
+.infoFile{
+    font-family: 'Merriweather', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: center;
 }
-.divTableCell, .divTableHead {
-	border: 1px solid #999999;
-	display: table-cell;
-	padding: 3px 10px;
+.urlShortenerinfo{
+    font-family: 'Merriweather', sans-serif;;
+    font-size: 0.8em;
+    text-align: justify;
+    word-wrap: break-word;
+    line-break: auto;
+    line-height: 1.5;
+    padding: 1.15rem 1.0875rem;
 }
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-	font-weight: bold;
+.infoshortenertext{
+    font-family: 'Merriweather', sans-serif;;
+    font-size: 0.95em;
+    text-align: justify;
+    word-wrap: break-word;
+    line-break: auto;
+    line-height: 1.5;
+    padding: 1.15rem 1.0875rem;
 }
-.divTableFoot {
-	background-color: #EEE;
-	display: table-footer-group;
-	font-weight: bold;
+table{
+    width: 100%;
+    border-collapse: collapse;
 }
-.divTableBody {
-	display: table-row-group;
+tr:nth-of-type(odd){
+    background: #eeeeee;
 }
-
-.voffset {
-    margin-top: 2px;
+th{
+    background: #eeeeee;
 }
-
-.voffset1 {
-    margin-top: 5px;
-}
-
-.voffset2 {
-    margin-top: 10px;
-}
-
-.voffset3 {
-    margin-top: 15px;
-}
-
-.voffset4 {
-    margin-top: 30px;
-}
-
-.voffset5 {
-    margin-top: 40px;
+td,th{
+    padding: 6px;
+    border: 1px solid #ccc; 
+    text-align: left; 
 }
 
-.voffset6 {
-    margin-top: 60px;
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px){
+    table,thead,tbody,th,td,tr{
+        display: block
+    }
+    thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+    tr { border: 1px solid #ccc; }
+    td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+    }
+    td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
 }
-
-.voffset7 {
-    margin-top: 80px;
-}
-
-.voffset8 {
-    margin-top: 100px;
-}
-
-.voffset9 {
-    margin-top: 150px;
-}
-

@@ -1,73 +1,108 @@
-import '../Assets/styleSheets/base.scss';
-import React,{Component} from 'react';
+import {Link} from 'react-router-dom'
+import React from 'react'
+import Header from './Header'
+import Footer from './Footer'
+import '../Assets/styleSheets/base.scss'
 /**
  * base component for the app
  */
-class App extends Component {
- 
-  render() {
-    
-    return(
-      <div className="App">
-        <div className="projectTitle">
-          FreecodeCamp Api Challenges
-        </div>
-        <div className="textBase voffset4">
-          Bellow is a list of endpoints and how to use them for the challenges implemented
-        </div>
-        <div className="divTable voffset4" >
-          <div className="divTableBody">
-            <div className="divTableRow">
-              <div className="divTableCell"><a href="https://freecodecampapichallenges.herokuapp.com/whoami" target="_blank">/whoami</a></div>
-              <div className="divTableCell">
-                Endpoint that implements the challenge Request Header Parser Microservice located at <a href="https://www.freecodecamp.com/challenges/request-header-parser-microservice" target="_blank">here</a>
-              </div>
-            </div>
-            <div className="divTableRow">
-              <div className="divTableCell"><a href="https://freecodecampapichallenges.herokuapp.com/time/" target="_blank">/time</a></div>
-              <div className="divTableCell">
-                Endpoint that implements the challenge Timestamp Microservice located at <a href="https://www.freecodecamp.com/challenges/timestamp-microservice" target="_blank">here</a>.<br/>
-                By clicking the link on the cell on the left you will get a page on how to send the information
-              </div>
-            </div>
-            <div className="divTableRow">
-              <div className="divTableCell"><a href="https://freecodecampapichallenges.herokuapp.com/urlshort" target="_blank">/urlshort</a></div>
-              <div className="divTableCell">
-                Endpoint that implements the challenge Url shortener located at <a href="https://www.freecodecamp.com/challenges/url-shortener-microservice" target="_blank">here</a>.<br/>
-                By clicking the link on the cell on the left you will get a page on how to send the information
-              </div>
-            </div>
-            <div className="divTableRow">
-              <div className="divTableCell">
-                <a href="https://freecodecampapichallenges.herokuapp.com/fileinfo" target="_blank">/fileinfo</a>
-              </div>
-              <div className="divTableCell">
-                 Endpoint that implements the challenge for parsing the file information located at <a href="https://www.freecodecamp.com/challenges/file-metadata-microservice" target="_blank">here</a>.<br/>
-                 By clicking the link on the cell on the left you will get a page on how to send the information
-              </div>
-            </div>
-            <div className="divTableRow">
-              <div className="divTableCell">
-                <a href="https://freecodecampapichallenges.herokuapp.com/imgSearch" target="_blank">/imgsearch</a>
-               </div>
-              <div className="divTableCell">
-                Endpoint that implements the challenge for parsing the file information located at <a href="https://www.freecodecamp.com/challenges/image-search-abstraction-layer" target="_blank">here</a>.<br/>
-                By clicking the link on the cell on the left you will get a page on how to send the information
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="footer voffset6">
-           Made by <a href="https://www.freecodecamp.com/jonniebigodes" target="_blank">Jonniebigodes</a>
-        </div>
-        
-      </div>
-      
-      
-      
-      
-    )
-  }
-};
-export default App;
+
+const App = () => (
+  <div>
+    <Header />
+    <div className="projectTitle">FreecodeCamp Api Challenges</div>
+    <div className="textBase">
+      Bellow is a list of endpoints and how to use them for the challenges
+      implemented
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Project Endpoint</th>
+          <th>Project Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <Link to="/whoami">/whoami</Link>
+          </td>
+          <td>
+            <p>
+              Endpoint that implements the Api and Microservices project Request
+              Header Parser Microservice.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Link to="/time">/time</Link>
+          </td>
+          <td>
+            <p>
+              Endpoint that implements the Api and Microservices project
+              Timestamp Microservice.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Link to="/shorter">/shorter</Link>
+          </td>
+          <td>
+            <p>
+              Endpoint that implements the Api and Microservices project URL
+              Shortener Microservice.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Link to="/listshort">/listshort</Link>
+          </td>
+          <td>
+            <p>
+              Endpoint that gets a list of the urls stored by Api project URL
+              Shortener Microservice.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Link to="/fileupload">/fileinfo</Link>
+          </td>
+          <td>
+            <p>
+              Endpoint that implements the Api and Microservices project Request
+              Header Parser Microservice.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Link to="/imgsearch">/imagesearch</Link>
+          </td>
+          <td>
+            <p>
+              Endpoint that implements the Api and Microservices project Image
+              Search.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Link to="/exercises">/exercises</Link>
+          </td>
+          <td>
+            <p>
+              Endpoint that implements the Api and Microservices project
+              Exercise Tracker.
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <Footer />
+  </div>
+)
+export default App
