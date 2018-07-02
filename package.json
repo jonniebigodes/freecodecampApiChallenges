@@ -8,7 +8,7 @@
     "testserver": "mocha --compilers js:babel-core/register --require babel-polyfill \"__tests__/server/**/*.js\" --exit --timeout 30000",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
-    "start": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./lib/server.bundle.js",
     "watch": "webpack -d --watch",
     "showerrors": "webpack --progress --color --watch --display-error-details",
     "showinfo": "webpack --display-modules --display-reasons",
