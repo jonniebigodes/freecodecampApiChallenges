@@ -1,6 +1,7 @@
 import React from 'react'
+import '../Assets/styleSheets/base.scss';
 
-export const NotFound = () => {
+const UrlNotFound = () => {
   return (
     <div className="NotFound">
       <h1>
@@ -9,3 +10,4 @@ export const NotFound = () => {
     </div>
   )
 }
+export default UrlNotFound;

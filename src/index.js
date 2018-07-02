@@ -4,7 +4,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import App from './components/App'
 import WhoAmi from './components/Whoami'
 import TimeParser from './components/TimeParser'
-// import NotFound from './components/NotFound'
+import UrlNotFound from './components/UrlNotFound'
 import FileInformation from './components/FileInformation'
 import Shortener from './components/Shortener'
 import Urlist from './components/UrlList'
@@ -22,7 +22,7 @@ render(
       <Route path="/imgsearch" exact component={imgComponent} />
       <Route path="/exercises" exact component={Exercises} />
       <Route path="/" exact component={App} />
-      {/* <Route component={NotFound} /> */}
+      <Route component={UrlNotFound} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
