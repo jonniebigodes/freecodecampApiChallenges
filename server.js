@@ -7,8 +7,6 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import logger from './logger';
 
-console.log(`process.env.NODE_ENV=>${process.env.NODE_ENV}`);
-
 const UserModel= process.env.NODE_ENV!=='production'?require('./src/models/Users.model').default:require('./Users.model').default;
 const UrlModel=process.env.NODE_ENV!=='production'?require('./src/models/Urls.model').default:require('./Urls.model').default;
 const ExerciseModel= process.env.NODE_ENV!=='production'?require('./src/models/Exercises.model').default:require('./Exercises.model').default;
