@@ -5,7 +5,7 @@ import App from './components/App'
 import WhoAmi from './components/Whoami'
 // import TimeInfo from './components/Timeinfo'
 // import NotFound from './components/NotFound'
-import FileMetaData from './components/FileMetaData'
+import FileInformation from './components/FileInformation'
 // import UrlShort from './components/UrlShort'
 import Urlist from './components/UrlList'
 import imgComponent from './components/imgComponent'
@@ -16,7 +16,7 @@ render(
     <Switch>
       <Route path="/whoami" exact component={WhoAmi} />
       {/* <Route path="/time" exact component={TimeInfo} /> */}
-      <Route path="/fileupload" exact component={FileMetaData} />
+      <Route path="/fileupload" exact component={FileInformation} />
       {/* <Route path="/shorter" exact component={UrlShort} /> */}
       <Route path="/listshort" exact component={Urlist} />
       <Route path="/imgsearch" exact component={imgComponent} />
