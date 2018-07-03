@@ -18,8 +18,12 @@ const searchId = (id, urls) => {
   return false
 }
 const createShortUrl = value => {
+
   const isvalid = validateUrl(value.url)
   const listofUrls = [...value.urls]
+  console.log('====================================');
+  console.log(`createShortUrl with value:${JSON.stringify(value,null,2)}\n listofUrls=>${JSON.stringify(listofUrls,null,2)}`);
+  console.log('====================================');
   if (isvalid) {
     let randomId = randomizeNumber()
     while (searchId(randomId, listofUrls)) {

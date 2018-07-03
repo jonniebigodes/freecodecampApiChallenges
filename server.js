@@ -139,6 +139,9 @@ router.route('/short')
             bufferMaxEntries: 0,
             bufferCommands:false
         });
+        console.log('====================================');
+        console.log('entered short post');
+        console.log('====================================');
         const urlmodel= mongoose.model('url');
         const savedurls= await urlmodel.find({});
         const urlinplace=savedurls.find(x=>x.urllink===req.body.url);
@@ -147,9 +150,9 @@ router.route('/short')
             return res.status(500).json({message:'url already added'});
         }
         const result= createShortUrl({url:req.body.url,urls:savedurls});
-
-        logger.warn(`result create short url=>${JSON.stringify(result,null,2)}`);
-        
+        console.log('====================================');
+        console.log(`result create short url=>${JSON.stringify(result,null,2)}`);
+        console.log('====================================');
 
         if (result.shortId===-1){
             mongoose.disconnect();
