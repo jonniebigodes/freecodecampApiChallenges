@@ -21,13 +21,14 @@ const createShortUrl = value => {
   const shortNOK={shortId: -1, original_url: value.url, shortened_url: 'NOK'};
   const isvalid = validateUrl(value.url)
   const listofUrls = [...value.urls]
-  console.log('====================================');
-  console.log(`createShortUrl with value:${JSON.stringify(value,null,2)}\n listofUrls=>${JSON.stringify(listofUrls,null,2)}`);
-  console.log(`valid:${isvalid}`);
-  console.log('====================================');
-
   if (isvalid) {
+    console.log('====================================');
+    console.log(`entered is valid:${isvalid}\nlistofurls=>${JSON.stringify(listofUrls,null,2)}`);
+    console.log('====================================');
     let randomId = randomizeNumber()
+    console.log('====================================');
+    console.log(`randomId:${isvalid}`);
+    console.log('====================================');
     while (searchId(randomId, listofUrls)) {
       randomId = randomizeNumber()
       console.log('====================================');

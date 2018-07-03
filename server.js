@@ -139,9 +139,7 @@ router.route('/short')
             bufferMaxEntries: 0,
             bufferCommands:false
         });
-        console.log('====================================');
-        console.log('entered short post');
-        console.log('====================================');
+        
         const urlmodel= mongoose.model('url');
         const savedurls= await urlmodel.find({});
         const urlinplace=savedurls.find(x=>x.urllink===req.body.url);
