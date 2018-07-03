@@ -22,12 +22,9 @@ const createShortUrl = value => {
   const isvalid = validateUrl(value.url)
   const listofUrls = [...value.urls]
   if (isvalid) {
-    console.log('====================================');
-    console.log(`entered is valid:${isvalid}\nlistofurls=>${JSON.stringify(listofUrls,null,2)}`);
-    console.log('====================================');
     let randomId = randomizeNumber()
     console.log('====================================');
-    console.log(`randomId:${isvalid}`);
+    console.log(`randomId:${randomId}`);
     console.log('====================================');
     while (searchId(randomId, listofUrls)) {
       randomId = randomizeNumber()
@@ -39,7 +36,7 @@ const createShortUrl = value => {
     const shortOK={
       shortId: randomId,
       shortened_url:
-        process.env.NODE.env !== 'production'
+      process.env.NODE_ENV!=='production'
           ? `http://localhost:5000/api/short/${randomId}`
           : `https://freecodecampapichallenges.herokuapp.com/api/short/${randomId}`,
       original_url: value.url
@@ -48,14 +45,6 @@ const createShortUrl = value => {
     console.log(`short ok:${JSON.stringify(shortOK,null,2)}`);
     console.log('====================================');
     return shortOK;
-    // return {
-    //   shortId: randomId,
-    //   shortened_url:
-    //     process.env.NODE.env !== 'production'
-    //       ? `http://localhost:5000/api/short/${randomId}`
-    //       : `https://freecodecampapichallenges.herokuapp.com/api/short/${randomId}`,
-    //   original_url: value.url
-    // }
   }
   return shortNOK;
 }
