@@ -10,7 +10,6 @@ const validateUrl = value => {
   return testurl.test(value)
 }
 const searchId = (id, urls) => {
-  // return !!urls.find(item=>item.urlid===id);
   const result = urls.find(item => item.urlid === id)
   if (result) {
     return true
@@ -23,10 +22,12 @@ const createShortUrl = value => {
   const listofUrls = [...value.urls]
   if (isvalid) {
     let randomId = randomizeNumber()
-   
+    console.log('====================================');
+    console.log(`r=>:${JSON.stringify(randomId,null,2)}`);
+    console.log('====================================')
     while (searchId(randomId, listofUrls)) {
       console.log('====================================');
-      console.log(`r=>:${JSON.stringify(randomId,null,2)}`);
+      console.log(`r regen=>:${JSON.stringify(randomId,null,2)}`);
       console.log('====================================');
       randomId = randomizeNumber()
 

@@ -66,7 +66,10 @@ class Urlist extends Component {
             Supercalifragilistic API url shortener microservice
           </div>
           <div className="exercisesInfoText">list of urls in system:</div>
-          <ul>{datalist}</ul>
+          <div className="exercisesInfoText">
+            <ul>{datalist}</ul>
+          </div>
+          
         </div>
         <Footer />
       </div>
