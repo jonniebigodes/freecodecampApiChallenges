@@ -23,11 +23,17 @@ const createShortUrl = value => {
   const listofUrls = [...value.urls]
   console.log('====================================');
   console.log(`createShortUrl with value:${JSON.stringify(value,null,2)}\n listofUrls=>${JSON.stringify(listofUrls,null,2)}`);
+  console.log(`valid:${isvalid}`);
   console.log('====================================');
+
   if (isvalid) {
     let randomId = randomizeNumber()
     while (searchId(randomId, listofUrls)) {
       randomId = randomizeNumber()
+      console.log('====================================');
+      console.log(`randomId:${JSON.stringify(randomId,null,2)}`);
+      console.log('====================================');
+
     }
     const shortOK={
       shortId: randomId,
