@@ -49,7 +49,7 @@ class Shortener extends Component {
     return (
       <div>
         <div className="timeSubmission" key="urlsubmission">
-          The url can be visited{' '}
+          The url can be visited in {' '}
           <a
             href={this.state.shortData.short_url}
             target="_noopener"

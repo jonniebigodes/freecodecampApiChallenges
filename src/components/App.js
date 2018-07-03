@@ -10,8 +10,8 @@ import '../Assets/styleSheets/base.scss'
 const App = () => (
   <div>
     <Header />
-    <div className="projectTitle">FreecodeCamp Api Challenges</div>
-    <div className="textBase">
+    <div className="titles">FreecodeCamp Api Challenges</div>
+    <div className="exercisesInfoText">
       Bellow is a list of endpoints and how to use them for the challenges
       implemented
     </div>
