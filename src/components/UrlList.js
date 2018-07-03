@@ -26,7 +26,7 @@ class Urlist extends Component {
       .catch(err => {
         console.log(
           `ERROR GETTING LIST URLS DATA=>${JSON.stringify(
-            err.message,
+            err.response,
             null,
             2
           )}`

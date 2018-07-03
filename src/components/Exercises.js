@@ -45,7 +45,7 @@ class Exercises extends Component {
       })
       .catch(error => {
         console.log('====================================')
-        console.log(`Error creating user:${error.message}`)
+        console.log(`Error creating user:${error.response}`)
         console.log('====================================')
         this.setState({isError: true})
       })
@@ -104,7 +104,7 @@ class Exercises extends Component {
       })
       .catch(error => {
         console.log('====================================')
-        console.log(`Error creating user:${error.message}`)
+        console.log(`Error creating user:${error.response}`)
         console.log('====================================')
         this.setState({isError: true})
       })

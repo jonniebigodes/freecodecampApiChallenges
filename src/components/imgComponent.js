@@ -29,7 +29,7 @@ class ImageInfo extends Component {
       })
       .catch(errdate => {
         console.log(
-          `error getting the date from image search:${errdate.message}`
+          `error getting the date from image search:${errdate.response}`
         )
         this.setState({isError: true})
       })

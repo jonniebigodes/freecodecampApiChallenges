@@ -28,7 +28,7 @@ class WhoAmi extends Component {
       })
       .catch(err => {
         console.log(
-          `ERROR GETTING DATA=>${JSON.stringify(err.message, null, 2)}`
+          `ERROR GETTING DATA=>${JSON.stringify(err.response, null, 2)}`
         )
         this.setState({isError: true})
       })

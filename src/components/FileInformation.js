@@ -34,7 +34,7 @@ class FileInformation extends Component {
       .catch(error => {
         console.log('====================================')
         console.log(
-          `error info about the file:${JSON.stringify(error.message, null, 2)}`
+          `error info about the file:${JSON.stringify(error.response, null, 2)}`
         )
         console.log('====================================')
         this.setState({isError: true})

@@ -38,7 +38,7 @@ class TimeParser extends Component {
         .catch(errortime => {
           console.log(
             `ERROR GETTING TIME DATA=>${JSON.stringify(
-              errortime.message,
+              errortime.response,
               null,
               2
             )}`
